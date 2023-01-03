@@ -3,29 +3,39 @@ import './App.css';
 import React from 'react';
 
 export class App extends React.Component {
-  constructor(){
+  constructor() {
     super()
     this.state = {
-      data:null
+      active: null,
+      who: null
     }
-    console.warn("Constructor Called")
   }
-  
-  componentDidMount(){
-    this.setState({data:"Ayaan"})
-    console.warn("componentDidMount")
+
+  componentDidUpdate() {
+    console.warn("ComponentDidUpdate")
+    if( this.state.who == null ){
+      this.setState({
+        active:"The",
+        who:"Ayaan Shaikh"
+      })  
+    }
   }
-  render(){
-    console.warn("Render")
+
+  render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-  
-        </header>
+        <h1>Hello from {this.state.active} {this.state.who}</h1>
+        <button onClick={() => {
+          this.setState({
+            active:"The",
+            who:"Ayaan Shaikh"
+          })
+        }}>
+          Activate
+        </button>
       </div>
     );
-  
+
   }
 }
 
