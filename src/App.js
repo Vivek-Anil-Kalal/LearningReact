@@ -10,7 +10,7 @@ export class App extends React.Component {
     }
     console.warn("Constructor Called")
   }
-  
+  // just changing to commit   
 
   // this method will be called when the component will be fully loaded and also after the render method is called 
   // u can see in the output in console there the construtor called first then the render method is called then this method is called
