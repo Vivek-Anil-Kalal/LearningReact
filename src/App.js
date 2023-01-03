@@ -1,35 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
-import React from 'react';
+// we must have to import this useState from react library
+import React, { useState } from 'react';
 
-export class App extends React.Component {
-  constructor(){
-    super()
-    this.state = {
-      data:null
-    }
-    console.warn("Constructor Called")
-  }
+function App() {
+  // will then make array of two values one for accessing the state and other is method to update the state 
+  // Initialize with some meaning full value
+  let [count, setCount] = useState(0);
+  return (
+    <div className="App">
+      <h1>Hello from Ayaan : {count}</h1>
+      <button onClick={() => {
+        setCount(++count)
+      }}>
+        Increment
+      </button>
 
-  // this method will be called when the component will be fully loaded and also after the render method is called 
-  // u can see in the output in console there the construtor called first then the render method is called then this method is called
-  // after the state is changed the render method is re called ...
-  componentDidMount(){
-    this.setState({data:"Ayaan"})
-    console.warn("componentDidMount")
-  }
-  render(){
-    console.warn("Render")
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-  
-        </header>
-      </div>
-    );
-  
-  }
+      <br></br>
+      
+      <button onClick={() => {
+        setCount(--count)
+      }}>
+        Decrement
+      </button>
+    </div>
+  );
 }
 
 export default App;
