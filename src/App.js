@@ -2,27 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 // we must have to import this useState from react library
 import React, { useState } from 'react';
+import Forms from './Forms'
 
+// hooks are used to use the state and lifeCyclce method inside the functional components
+// useEffect hook is used to use the LifeCycle method inside the functional components 
+// useEffect alone act as three lifeCycle methods 1) ComponentDidMount 2) ComponentWillUmmount 3) ComponentDidUpdate 
+// When this method is called it will render three time at the time of all these three methods
 function App() {
-  // will then make array of two values one for accessing the state and other is method to update the state 
-  // Initialize with some meaning full value
-  let [count, setCount] = useState(0);
   return (
-    <div className="App">
-      <h1>Hello from Ayaan : {count}</h1>
-      <button onClick={() => {
-        setCount(++count)
-      }}>
-        Increment
-      </button>
-
-      <br></br>
-      
-      <button onClick={() => {
-        setCount(--count)
-      }}>
-        Decrement
-      </button>
+    <div>
+      <Forms />
     </div>
   );
 }
