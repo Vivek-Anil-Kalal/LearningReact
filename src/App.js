@@ -1,13 +1,30 @@
 import './App.css';
 import React from 'react';
-import Style from './cmp/Style';
+import Home from './cmp/Home';
+import About from './cmp/About';
+import Forms from './cmp/Forms';
+import { BrowserRouter as Router, Route, Link, Routes, Form } from 'react-router-dom'
 
 export class App extends React.Component {
 
   render() {
     return (
       <div className="App">
-        <Style data="apkply"/>
+        <Router>
+          {/* <Home />
+          <About />
+          <Forms /> */}
+          {/* These are the url-pattern kind off */}
+          <Link to="" >Home </Link>
+          <Link to="/about" > About </Link>
+          <Link to="/forms" > Forms </Link>
+
+          <Routes>
+            <Route exact path="/" element={Home} />
+            <Route path="/about" element={About} />
+            <Route path="/forms" element={Forms} />
+          </Routes>
+        </Router>
       </div>
     );
 
